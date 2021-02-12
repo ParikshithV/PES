@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gradient</title>
+    <style>
+    #grad1 {
+      height: 50px;
+      background-image: linear-gradient(pink, red);
+      text-align:center;
+    }
+    #grad2 {
+      height: 100px;
+      width: 100px;
+      margin: 2px;
+      border: 30px solid;
+      border-image-source: linear-gradient(to right, green , purple);
+      border-image-slice: 1;
+      display:inline-block;
+      text-align:center;
+    }
+    #grad3 {
+      height: 100px;
+      width: 100px;
+      margin: 2px;
+      border: 30px solid;
+      border-image-source: linear-gradient(to bottom right, blue, yellow);
+      border-image-slice: 1;
+      display:inline-block;
+      text-align:center;
+    }
+    #multi_grad {
+      height: 100px;
+      width: 100px;
+      margin: 2px;
+      border: 30px solid;
+      border-image-source: linear-gradient(brown, red, slateblue);
+      border-image-slice: 1;
+      display:inline-block;
+      text-align:center;
+    }
+
+    #repeat_radial_grad {
+      height: 200px;
+      width: 200px;
+      margin: 2px;
+      border-radius:100%;
+      background-image: repeating-radial-gradient(orange, grey 10%, green 15%);
+      background-image-slice: 1;
+      display:inline-block;
+      text-align:center;
+    }
+    #radial_grad {
+      height: 100px;
+      width: 100px;
+      margin: 2px;
+      background-image: radial-gradient(purple, yellow, pink);
+      background-image-slice: 1;
+      display:inline-block;
+      text-align:center;
+    }
+    #circle_grad {
+      height: 200px;
+      width: 200px;
+      border-radius:100%;
+      background-image: radial-gradient(circle, purple, yellow, pink);
+      background-image-slice: 1;
+      display:inline-block;
+      text-align:center;
+    }
+    #borderimg {
+      border: 10px solid transparent;
+      padding: 15px;
+      height: 600px;
+      border-image: url(border.png) 30 round;
+    }
+    </style>
+  </head>
+  <body id="borderimg">
+    <h1 id="grad1">Html Gradients</h1>
+    <p id="grad2">Left to right gradient</p>
+    <p id="grad3">Top left to bottom right</p>
+    <div id="multi_grad">Multiple gradient</div>
+    <div id="repeat_radial_grad"><p>Repeat radial gradient</p></div>
+    <div id="radial_grad"><p>Radial gradient</p></div>
+    <div id="circle_grad"><p>Circular gradient</p></div>
+  </body>
+</html>
