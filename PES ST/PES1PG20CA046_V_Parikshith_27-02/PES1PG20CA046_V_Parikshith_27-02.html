@@ -1,0 +1,44 @@
+<script>
+document.write("0 = "+isNaN(0)+"<br>");
+document.write("boolean true = "+isNaN(true)+"<br>");
+document.write("undefined = "+isNaN(undefined)+"<br>");
+document.write("Number as string = "+isNaN('123')+"<br>");
+document.write("string = "+isNaN('Hello')+"<br>");
+document.write("Date = "+isNaN('27/02/21')+"<br>");
+document.write("empty = "+isNaN('')+"<br>");
+document.write("Number = "+isNaN(123)+"<br>");
+document.write("Negative number = "+isNaN(-1.23)+"<br>");
+document.write("NaN as a string = "+isNaN('NaN')+"<br>");
+document.write("NaN = "+isNaN(NaN)+"<br>");
+document.write("null = "+isNaN(null)+"<br>");
+
+var str = "The  quick  brown  fox  jumps  over  the  lazy  dog";
+var sln = str.length;
+var pos = str.indexOf("locate", 15);
+var spos = str.search("fox");
+var chAt = str.charAt(0);
+var rep = str.replace("brown", "red");
+var subs = str.substring(7, 13);
+var res = str.slice(7);
+var upper = str.toUpperCase();
+document.write("<br> original string = "+str);
+document.write("<br> lenth = "+sln);
+document.write("<br> index = "+pos);
+document.write("<br> search = "+spos);
+document.write("<br> char at 0 = "+chAt);
+document.write("<br> replace = "+rep);
+document.write("<br> substring = "+subs);
+document.write("<br> slice = "+res);
+document.write("<br> toUpperCase = "+upper);
+
+document.write("<br><br>type of operator: <br>");
+document.write("typeof 0 = "+typeof 0+"<br>");
+document.write("typeof 'hello' = "+typeof "hello"+"<br>");
+document.write("typeof 123 = "+typeof 123+"<br>");
+typeof str;
+
+
+
+var d = new Date();
+document.write("<br><br> Date = "+d);
+</script>
