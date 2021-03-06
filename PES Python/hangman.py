@@ -1,13 +1,11 @@
 import random
-words = ['food','dessert','space']
-wordDictonary = {'food':'chapati','dessert':'aamras','space':'meteor'}
-index = random.randrange(0,3)
+words = ['food','dessert','space','windows','mattress']
+wordDictonary = {'food':'chapati','dessert':'aamras','space':'meteor','windows':'os','mattress':'sleep'}
+index = random.randrange(0,5)
 wordSelect = words[index]
-global chances
-chances  = 10
-global wordsIn
+chances  = 5
 wordsIn = len(wordSelect)
-global c
+c = 0
 
 dashes=[]
 print("Game start")
@@ -22,28 +20,39 @@ for i in wordSelect:
 letterDash()
 
 def inputWord():
-    c=0
+    global wordSelect
+    global c
+    global chances
     i=-1
     flagChar=0
-    wordInput = input("\nGuess a character:")
-    for ch in wordSelect:
+    repeat=1
+    print("\nClue:",wordDictonary[wordSelect])
+    wordInput = input("\nGuess a character: ")
+    if (wordInput in dashes):
         i+=1
-        if(wordInput==ch):
-            dashes[i]=ch
-            c+=1
-            flagChar=1
+        flagChar=1
+        if(repeat==1):
+            print("Letter repeated")
+            repeat=0
+    else:
+        for ch in wordSelect:
+            i+=1
+            if(wordInput==ch):
+                dashes[i]=ch
+                c+=1
+                flagChar=1
             
     if(flagChar==0):
         print("Character not found")
+        print("You have",chances,"left")
         chances -=1
     letterDash()
-    flag=input("\nDo you want to continue (y/n)")
 
 while(flag=="y"):
-    if(chances > 0 and c < wordsIn):
+    if(c < wordsIn):
         inputWord()
-    elif(chances > 0):
+    elif(chances < 0):
         print("You loose")
-    elif(c < wordsIn):
-        print("You win")
-
+    elif(c >= wordsIn):
+        print("\nYou win!")
+        flag="n"
