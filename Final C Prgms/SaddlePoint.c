@@ -18,7 +18,7 @@ int main()
     min = a[i][0];
     for (j = 0; j < n; j++) {
       if (min > a[i][j]) {
-         min = a[i][j];
+         min = a[i][j];         
          pos = j;
       }
     }
