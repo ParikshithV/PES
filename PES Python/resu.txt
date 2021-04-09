@@ -1,0 +1,7 @@
+name: q
+skill: q
+mobile: q
+experience: q
+CGPA: q
+email: q
+current position: q
