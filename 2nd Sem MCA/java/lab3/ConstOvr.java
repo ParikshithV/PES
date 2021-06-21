@@ -9,7 +9,7 @@ class ConstOvr{
   }
 
   public ConstOvr() {
-    this("hii");
+    this("hii"); //Nested constructor
     System.out.println("Constructor called without paramater");
   }
 
