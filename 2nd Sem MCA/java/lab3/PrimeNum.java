@@ -5,7 +5,7 @@ class PrimeNum{
     int i, j, flag;
     int a = Integer.parseInt(args[0]);
     int b = Integer.parseInt(args[1]);
-    System.out.printf("\nPrime numbers between %d and %d are: \n", a, b);
+    System.out.println("\nPrime numbers between are: ");
     for (i = a; i <= b; i++) {
         if (i == 1 || i == 0)
             continue;
