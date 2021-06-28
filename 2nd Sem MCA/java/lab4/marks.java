@@ -8,7 +8,6 @@ class Marks{
     int nStud = 2;  //number of students
     int student[][] = new int[nStud][];
     int totMark[] = new int[nStud];
-    student = new int[nStud][];
 
     System.out.println("Enter marks of "+nStud+" students:");
 
