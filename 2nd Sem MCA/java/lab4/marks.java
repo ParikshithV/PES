@@ -5,7 +5,7 @@ class Marks{
   {
     Scanner input= new Scanner(System.in);
 
-    int nStud = 2;  //number of students
+    int nStud = 5;  //number of students
     int student[][] = new int[nStud][];
     int totMark[] = new int[nStud];
 
