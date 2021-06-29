@@ -1,0 +1,19 @@
+set title "Multiplication"
+set xlabel "Elements"
+set ylabel "Time Taken"
+plot "C:/Users/parir/Documents/GitHub/PES/2nd Sem MCA/ada/L4/time1.txt" using 1:2 title "Actual Time" with linespoints 
+
+set title "Multiplication"
+set xlabel "Elements"
+set ylabel "Time Taken"
+plot "C:/Users/parir/Documents/GitHub/PES/2nd Sem MCA/ada/L4/time2.txt" using 1:2 title "Actual Time" with linespoints 
+
+set title "Factorial"
+set xlabel "Elements"
+set ylabel "Time Taken"
+plot "C:/Users/parir/Documents/GitHub/PES/2nd Sem MCA/ada/L4/factorial_actual.txt" using 1:2 title "Actual Time" with linespoints 
+
+set title "Factorial"
+set xlabel "Elements"
+set ylabel "Time Taken"
+plot "C:/Users/parir/Documents/GitHub/PES/2nd Sem MCA/ada/L4/factorial_estimated.txt" using 1:2 title "Actual Time" with linespoints 
