@@ -10,10 +10,10 @@ class StudTable {
 		Statement st=con.createStatement();
 
     String dropTable = "DROP TABLE student";
-    //st.executeQuery(dropTable);
+    st.executeQuery(dropTable);
 
     String TableCreate ="CREATE TABLE student (srn varchar(10), name varchar(10), course varchar(10), cgpa varchar(10))";
-    //st.executeQuery(TableCreate);
+    st.executeQuery(TableCreate);
 
     String query="select * from student";
     String query1="select * from student where cgpa > 8";
