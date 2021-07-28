@@ -64,6 +64,7 @@ class StudTable {
       System.out.println(result2.getInt(1)+"\t"+result2.getString(2)+"\t"+result2.getString(3)+"\t"+result2.getString(4));
     }
 
+    st.executeQuery(dropTable);
 		con.close();
 	}
 }
