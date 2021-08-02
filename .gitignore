@@ -2,3 +2,6 @@
 *.class
 2nd Sem MCA/ada/gnuplot 5.4 patchlevel 1.lnk
 *.exe
+/2nd Sem MCA/java/lab8/nbConn/nbproject/private/
+/2nd Sem MCA/java/lab8/nbConn/build/
+/2nd Sem MCA/java/lab8/nbConn/dist/
