@@ -1,0 +1,101 @@
+SQL*Plus: Release 11.2.0.2.0 Production on Thu Aug 5 14:31:27 2021
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect
+Enter user-name: gairik
+Enter password:
+Connected.
+SQL> set serveroutput on
+
+SQL> create table employee(emp_no number(2),emp_name varchar2(20),emp_dept varchar2(10),emp_salary number(6));
+
+Table created.
+
+SQL> insert into employee values(&emp_no,'&emp_name','&emp_dept',&emp_salary);
+Enter value for emp_no: 1
+Enter value for emp_name: Forbs ross
+Enter value for emp_dept: WD
+Enter value for emp_salary: 45000
+old   1: insert into employee values(&emp_no,'&emp_name','&emp_dept',&emp_salary)
+new   1: insert into employee values(1,'Forbs ross','WD',45000)
+
+1 row created.
+
+SQL> insert into employee values(&emp_no,'&emp_name','&emp_dept',&emp_salary);
+Enter value for emp_no: 2
+Enter value for emp_name: Marks jems
+Enter value for emp_dept: PD
+Enter value for emp_salary: 38000
+old   1: insert into employee values(&emp_no,'&emp_name','&emp_dept',&emp_salary)
+new   1: insert into employee values(2,'Marks jems','PD',38000)
+
+1 row created.
+
+SQL> insert into employee values(&emp_no,'&emp_name','&emp_dept',&emp_salary);
+Enter value for emp_no: 3
+Enter value for emp_name: Saulin
+Enter value for emp_dept: PD
+Enter value for emp_salary: 34000
+old   1: insert into employee values(&emp_no,'&emp_name','&emp_dept',&emp_salary)
+new   1: insert into employee values(3,'Saulin','PD',34000)
+
+1 row created.
+
+SQL> insert into employee values(&emp_no,'&emp_name','&emp_dept',&emp_salary);
+Enter value for emp_no: 4
+Enter value for emp_name: Zenia Sroll
+Enter value for emp_dept: WD
+Enter value for emp_salary: 42000
+old   1: insert into employee values(&emp_no,'&emp_name','&emp_dept',&emp_salary)
+new   1: insert into employee values(4,'Zenia Sroll','WD',42000)
+
+1 row created.
+
+SQL> desc employee
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMP_NO                                             NUMBER(2)
+ EMP_NAME                                           VARCHAR2(20)
+ EMP_DEPT                                           VARCHAR2(10)
+ EMP_SALARY                                         NUMBER(6)
+
+SQL> select * from employee;
+
+    EMP_NO EMP_NAME             EMP_DEPT   EMP_SALARY
+---------- -------------------- ---------- ----------
+         1 Forbs ross           WD              45000
+         2 Marks jems           PD              38000
+         3 Saulin               PD              34000
+         4 Zenia Sroll          WD              42000
+
+SQL> ed exp.sql
+
+SQL> ed exp.sql
+
+SQL> @ exp.sql
+Employee Name  Employee Department  Employee Salary
+Saulin  PD  34000
+
+PL/SQL procedure successfully completed.
+
+//Code For Explicit Cursor
+
+declare
+	cursor curemp is
+	  select emp_name,emp_dept,emp_salary from employee
+	  where emp_no = 3;
+	vname employee.emp_name%type;
+	vdept employee.emp_dept%type;
+	vsalary employee.emp_salary%type;
+begin
+	open curemp;
+loop
+	fetch curemp into vname,vdept,vsalary;
+	exit when curemp%notfound;
+	dbms_output.put_line('Employee Name'||'  '||'Employee Department'||'  '||'Employee Salary');
+	dbms_output.put_line(vname ||'  '||vdept||'  '||vsalary);
+end loop;
+	close curemp;
+end;
+/
