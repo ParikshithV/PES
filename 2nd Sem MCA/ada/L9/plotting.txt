@@ -1,0 +1,4 @@
+set title "Title"
+set xlabel "Recurrsion no."
+set ylabel "Time Taken"
+plot "C:/Users/parir/Documents/GitHub/PES/2nd Sem MCA/ada/L9/quick_actual.txt" using 1:2 title "Actual Time" with linespoints 
